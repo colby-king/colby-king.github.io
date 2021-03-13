@@ -1,0 +1,232 @@
+// Placeholder to allow defining custom styles that override everything else.
+// (Use `_sass/minima/custom-variables.scss` to override variable defaults)
+
+
+
+/* basic grid taken from Bootstrap 4.0 */
+.row {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.col {
+  -webkit-flex-basis: 0;
+      -ms-flex-preferred-size: 0;
+          flex-basis: 0;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  max-width: 100%;
+}
+
+
+
+
+/* Nav Bar customizations */
+.nav-wrapper{
+	background-color: #A6BCDD; //#d0d2e6
+	border-bottom: 1px solid black;
+}
+
+
+// Global
+// body {
+//   background: #c7ffd3;
+//   font-family: Roboto Mono;
+//   font-size: 18px;
+//   font-weight: 700;
+//   color: #666;
+  
+//   width: 700px;
+//   margin: 0 auto;
+// }
+
+.crumb-container{
+  .title-definiton {
+    width: 500px;
+    margin-bottom: 30px;
+  }
+
+  .breadcrumb {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 10px 10px 20px;
+  }
+
+  ol > li {
+    display: inline-block;
+    position: relative;
+    width: 16%;
+    //margin-top:10px;
+      // Last child
+    &:last-child {
+      a {
+        cursor: default;
+      }
+      
+      &::before,
+      &::after {
+        // Removed this to eliminate highlighting of last child
+        //background: #ffffc0; 
+      }
+    }
+    
+    // :Hover
+    &:not(:last-child):hover {
+      &::before,
+      &::after {
+        background: lightsalmon;
+      }
+    }
+    // Added this to highlight the "active" <li>
+    &.active{
+      &::before,
+      &::after {
+        background: lightsalmon;
+      }
+    }
+    
+    &::before,
+    &::after{
+      content: '';
+      position: absolute;
+      left: 0;
+      height: 50%;
+      width: 100%;
+      background: white;
+      border-left: 2px solid black;
+      border-right: 2px solid black;
+      z-index: 1;
+    }
+    
+    &::before {
+      top: -2px;
+      transform: skew(30deg);
+      border-top: 2px solid black;
+    }
+    
+    &::after {
+      bottom: -2px;
+      transform: skew(-30deg);
+      border-bottom: 2px solid black;
+    }
+  }
+
+  a {
+    display: inline-block;
+    position: relative;
+    line-height: 2.5;
+    //padding: 0 20px; //eliminated
+    color: #666;
+    text-decoration: none;
+    z-index: 2;
+    color: black;
+    width: 100%; //added to make <a> span the size of <li>
+    text-align: center; // Added to center text
+    // Added to bold the list element fonts
+    span {
+      font-weight: bold;
+      overflow-wrap: normal;
+    }
+  }
+
+  ol > li {
+    &:first-child {
+      background-color: white;
+      border-left: 2px solid black;
+      left: -5px;
+      box-sizing: content-box;
+
+      &:hover {
+        background-color: lightsalmon;      
+      }
+
+      &::before,
+      &::after {
+          left: 4px;
+          border-left: none;
+
+        }
+      }
+  }
+}
+
+
+
+//button default style
+
+.c-btn {
+  text-decoration: none;
+  padding: 0 18px;
+  border: 2px solid #666;
+  border-radius: 5px;
+  color: #666;
+  transition: all 0.3s ease-in-out;
+  
+  &:hover {
+    background-color: lightsalmon;
+  }
+}
+
+/* Collapsible elements */
+.collapsible {
+  background-color: antiquewhite;
+  color: white;
+  cursor: pointer;
+  margin-top: 15px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  border: 2px solid black;
+
+  &::before{
+    content: "+";
+    color: black;
+    float: right;
+    margin-top: 8px;
+    margin-right:20px;
+    font-weight: bold;
+    font-size: x-large;
+    transition: all .5s;
+  }
+  &.active::before{
+    content: '-';
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+}
+
+.active, .collapsible:hover {
+  //background-color: #555;
+}
+
+.content {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #f1f1f1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
