@@ -11,9 +11,9 @@ permalink: /projects/
 		alert("Video poker isn't supported on screens less than 600px");
 	}
 </script>
-<div id="game-container"></div>
+<div id="videopoker"></div>
 <script src="/assets/js/videopoker/videopoker.js"></script>
-<script type="text/javascript">POKER.Game.start({board:'game-container'});</script>
+<script type="text/javascript">POKER.Game.start({board:'videopoker'});</script>
 
 
 <h2>Text Animation</h2>
