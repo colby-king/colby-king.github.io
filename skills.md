@@ -34,10 +34,11 @@ permalink: /skills/
 </div>
 <div id="collapse{{n}}" class="content">
   <p>{{skill.description}}</p>
+  <ul>
   {% for proj in skill.projects %}
-    <p>{{proj.name}}</p>
+    <li><a href="{{proj.link}}">{{proj.name}}</a></li>
   {% endfor %}
-
+  </ul>
 </div>
 {% assign n = n | plus:1 %}
 {% endif %}
@@ -72,9 +73,11 @@ permalink: /skills/
 </div>
 <div id="collapse{{n}}" class="content">
   <p>{{skill.description}}</p>
+  <ul>
   {% for proj in skill.projects %}
-    <p>{{proj.name}}</p>
+    <li><a href="{{proj.link}}">{{proj.name}}</a></li>
   {% endfor %}
+  </ul>
 
 </div>
 {% assign n = n | plus:1 %}
